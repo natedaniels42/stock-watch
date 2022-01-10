@@ -11,6 +11,7 @@ export class AppComponent {
   index: number = 0;
   stockList: string[] = [];
   currentStocks: any = [];
+  historicalData: any = []; 
 
   constructor(private socketService: SocketService) {  }
 
@@ -23,6 +24,10 @@ export class AppComponent {
       this.currentStocks = data.data;
     })
 
+    this.socketService.listen('historical').subscribe((data: any) => {
+      this.historicalData = data.stocks;
+    })
+
     this.getCurrent();
 
     setInterval(() => {
@@ -33,5 +38,10 @@ export class AppComponent {
   getCurrent() {
     this.socketService.emit('live', {'request-type': 'live', 'data': [this.index, (this.index + 1) % 10, (this.index + 2) % 10]});
     this.index = (this.index + 1) % 10;
+  }
+
+  getHistorical(data: any, event: Event) {
+    event.preventDefault();
+    this.socketService.emit('historical', {'request-type': 'historical', 'data': {'symbols': /*this.stockList*/ ['F'], interval: data}});
   }
 }
