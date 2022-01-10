@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SocketService } from './socket.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'StockWatch';
+  stockList: string[] = [];
+
+  constructor(private socketService: SocketService) {  }
+
+  ngOnInit() {
+    this.socketService.listen('list').subscribe((data: any) => {
+      console.log(data);
+    })
+  }
 }
