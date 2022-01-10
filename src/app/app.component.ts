@@ -20,7 +20,7 @@ export class AppComponent {
     })
 
     this.socketService.listen('live').subscribe((data: any) => {
-      this.currentStocks = data;
+      this.currentStocks = data.data;
     })
 
     this.getCurrent();
@@ -31,7 +31,7 @@ export class AppComponent {
   }
 
   getCurrent() {
-    this.socketService.emit('live', [this.index, (this.index + 1) % 10, (this.index + 2) % 10]);
+    this.socketService.emit('live', {'request-type': 'live', 'data': [this.index, (this.index + 1) % 10, (this.index + 2) % 10]});
     this.index = (this.index + 1) % 10;
   }
 }
