@@ -1,5 +1,10 @@
 <h1>{{title}}</h1>
-<P *ngFor="let stock of currentStocks">{{stock.symbol}}</P>
+<div>
+  <div *ngFor="let stock of currentStocks">
+    <img src={{stock.image}} width="25px">
+    <p>{{stock.symbol}}</p>
+  </div>
+</div>
 <button (click)="getHistorical(5, $event)">5</button>
 <button (click)="getHistorical(15, $event)">15</button>
 <button (click)="getHistorical(60, $event)">1 hour</button>
