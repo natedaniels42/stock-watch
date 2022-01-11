@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-secondary-chart',
+  selector: 'secondary-chart',
   templateUrl: './secondary-chart.component.html',
   styleUrls: ['./secondary-chart.component.scss']
 })

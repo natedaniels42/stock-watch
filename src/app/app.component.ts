@@ -25,7 +25,7 @@ export class AppComponent {
     })
 
     this.socketService.listen('historical').subscribe((data: any) => {
-      this.historicalData = data.stocks;
+      this.historicalData = data.data.stocks;
     })
 
     this.getCurrent();
@@ -42,6 +42,7 @@ export class AppComponent {
 
   getHistorical(data: any, event: Event) {
     event.preventDefault();
+
     this.socketService.emit('historical', {'request-type': 'historical', 'data': {'symbols': /*this.stockList*/ ['F'], interval: data}});
   }
 }
