@@ -61,7 +61,7 @@ export class PrimaryChartComponent implements OnChanges {
       const random5 = Math.floor(Math.random() * 255);
       const random6 = Math.floor(Math.random() * 255);
       return {
-        name: data.name,
+        name: data.symbol,
         x: xAxis,
         high: high,
         low: low,

@@ -2,6 +2,7 @@
 <div *ngIf="secondaryChart.data">
     <plotly-plot 
         [data]="secondaryChart.data"
-        [layout]="secondaryChart.layout">
+        [layout]="secondaryChart.layout"
+        [config]="secondaryChart.config">
     </plotly-plot>
 </div>

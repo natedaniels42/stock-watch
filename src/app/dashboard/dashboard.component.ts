@@ -8,6 +8,7 @@ import { SocketService } from '../socket.service';
 })
 export class DashboardComponent implements OnInit {
   index: number = 0;
+  timer: number = 0;
   stockList: string[] = [];
   currentStocks: any = [];
   historicalData: any = []; 
@@ -32,13 +33,18 @@ export class DashboardComponent implements OnInit {
     this.getHistorical(1440);
 
     setInterval(() => {
+      this.timer = (this.timer + 1) % 20;
+      if (this.timer === 0) {
+        this.index = (this.index + 1) % 10;
+      }
       this.getCurrent();
-    }, 5000);
+
+    }, 1000);
   }
 
   getCurrent() {
     this.socketService.emit('live', {'request-type': 'live', 'data': [this.index, (this.index + 1) % 10, (this.index + 2) % 10]});
-    this.index = (this.index + 1) % 10;
+    // this.index = (this.index + 1) % 10;
   }
 
   getHistorical(data: any, event?: Event) {

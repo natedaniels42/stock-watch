@@ -16,6 +16,7 @@ export class SecondaryChartComponent implements OnChanges {
     const currentData = this.stock.data.slice(this.stock.data.length - 10, this.stock.data.length);
     const xAxis = currentData.map((point: any) => new Date(point.timestamp));
     const yAxis = currentData.map((point: any) => point.amount);
+    const currentPrice = currentData[currentData.length - 1].amount;
 
     this.secondaryChart = {
       data: [{
@@ -24,13 +25,21 @@ export class SecondaryChartComponent implements OnChanges {
         mode: 'lines'
       }],
       layout: {
-        title: this.stock.name,
+        title: `${this.stock.name} $${currentPrice}`,
         xaxis: {
-          showgrid: false
+          showgrid: false,
+          showticklabels: false,
+          zeroline: false
         },
         yaxis: {
-          showgrid: false
+          showgrid: false,
+          showticklabels: false,
+          zeroline: false
         }
+      },
+      config: {
+        responsive: true,
+        displayModeBar: false
       }
     }
   }
