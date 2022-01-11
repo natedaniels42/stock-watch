@@ -1,16 +1,38 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 
 @Component({
   selector: 'secondary-chart',
   templateUrl: './secondary-chart.component.html',
   styleUrls: ['./secondary-chart.component.scss']
 })
-export class SecondaryChartComponent implements OnInit {
+export class SecondaryChartComponent implements OnChanges {
   @Input() stock: any = {};
-  
+  secondaryChart: any = {};
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    
+    const currentData = this.stock.data.slice(this.stock.data.length - 10, this.stock.data.length);
+    const xAxis = currentData.map((point: any) => new Date(point.timestamp));
+    const yAxis = currentData.map((point: any) => point.amount);
+
+    this.secondaryChart = {
+      data: [{
+        x: xAxis,
+        y: yAxis,
+        mode: 'lines'
+      }],
+      layout: {
+        title: this.stock.name,
+        xaxis: {
+          showgrid: false
+        },
+        yaxis: {
+          showgrid: false
+        }
+      }
+    }
   }
 
 }

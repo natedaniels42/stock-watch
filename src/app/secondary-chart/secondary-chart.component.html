@@ -1,2 +1,7 @@
 <p>secondary-chart works!</p>
-<p>{{stock.name}}</p>
+<div *ngIf="secondaryChart.data">
+    <plotly-plot 
+        [data]="secondaryChart.data"
+        [layout]="secondaryChart.layout">
+    </plotly-plot>
+</div>
