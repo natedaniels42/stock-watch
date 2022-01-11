@@ -7,10 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   @Input() stockList: {symbol: string, image: string}[] = []
-  symbols: string[] = []
+  symbols: string[] = [];
   interval: number = 0;
-  start: string = '';
-  end: string = '';
+  start: number = 0;
+  end: number = 0;
+  invalid: boolean = false;
 
   constructor() { }
 
@@ -25,6 +26,21 @@ export class SidebarComponent implements OnInit {
       this.symbols.push(target.id);
     }
     console.log(this.symbols);
+  }
+
+  handleChange(event: Event) {
+    const target = (event.target as HTMLInputElement);
+    const timestamp = Date.parse(target.value);
+    if (target.id === 'start') {
+      this.start = timestamp;
+    } else {
+      this.end = timestamp;
+    }
+
+    if (this.start > this.end && this.end !== 0) {
+      this.invalid = true;
+    }
+    console.log([this.start, this.end]);
   }
 
 }

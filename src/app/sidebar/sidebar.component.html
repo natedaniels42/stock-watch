@@ -4,3 +4,10 @@
         <p id={{stock.symbol}}>{{stock.symbol}}</p>
     </div>
 </div>
+<div id="data-container">
+    <p *ngIf="invalid" class="error">Start time must be before end time</p>
+    <label for="start">Starting Time:</label>
+    <input type="datetime-local" name="start" id="start" (focus)="invalid = false" (change)="handleChange($event)">
+    <label for="end">Ending Time:</label>
+    <input type="datetime-local" name="end" id="end" (focus)="invalid = false" (change)="handleChange($event)">
+</div>
