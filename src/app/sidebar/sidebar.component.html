@@ -11,3 +11,10 @@
     <label for="end">Ending Time:</label>
     <input type="datetime-local" name="end" id="end" (focus)="invalid = false" (change)="handleChange($event)">
 </div>
+<div id="interval-container">
+    <div (click)="handleIntervalClick($event)" id="5">5</div>
+    <div (click)="handleIntervalClick($event)" id="15">15</div>
+    <div (click)="handleIntervalClick($event)" id="60">1 hour</div>
+    <div (click)="handleIntervalClick($event)" id="1440">1 day</div>
+</div>
+<button type="submit" (click)="handleSubmit($event)">Get Data</button>

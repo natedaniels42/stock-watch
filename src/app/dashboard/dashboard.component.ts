@@ -12,7 +12,12 @@ export class DashboardComponent implements OnInit {
   stockList: {symbol: string, image: string}[] = [];
   currentStocks: any = [];
   historicalData: any = []; 
-
+  historicalSearch = {
+      symbols: [],
+      start: 0,
+      end: 0,
+      interval: 0
+    }
   constructor(private socketService: SocketService) { }
 
   ngOnInit(): void {
@@ -30,7 +35,11 @@ export class DashboardComponent implements OnInit {
 
     this.getCurrent();
 
-    this.getHistorical(1440);
+    this.getHistorical({
+      symbols: ['F', 'T'],
+      start: Date.now() - 604800000,
+      end: Date.now(),
+      interval: 1440});
 
     setInterval(() => {
       this.timer = (this.timer + 1) % 20;
@@ -64,6 +73,6 @@ export class DashboardComponent implements OnInit {
       event.preventDefault();
     }
 
-    this.socketService.emit('historical', {'request-type': 'historical', 'data': {'symbols': this.stockList, interval: data}});
+    this.socketService.emit('historical', {'request-type': 'historical', 'data': data});
   }
 }

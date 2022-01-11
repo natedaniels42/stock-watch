@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'sidebar',
@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  @Input() stockList: {symbol: string, image: string}[] = []
+  @Input() stockList: {symbol: string, image: string}[] = [];
+  @Output() historicalSearch = new EventEmitter();
   symbols: string[] = [];
   interval: number = 0;
   start: number = 0;
@@ -41,6 +42,34 @@ export class SidebarComponent implements OnInit {
       this.invalid = true;
     }
     console.log([this.start, this.end]);
+  }
+
+  handleIntervalClick(event: Event) {
+    this.interval = Number((event.target as HTMLElement).id);
+    console.log(this.interval);
+  }
+
+  handleSubmit(event: Event) {
+    event.preventDefault();
+
+    if (this.symbols.length > 0 
+      && this.start < this.end 
+      && this.start
+      && this.end
+      && this.interval) {
+        this.historicalSearch.emit({
+          symbols: this.symbols,
+          start: this.start,
+          end: this.end,
+          interval: this.interval
+        });
+        this.symbols = [];
+        this.interval = 0;
+        this.start = 0;
+        this.end = 0;
+    } else {
+      console.log('something is wrong')
+    }
   }
 
 }
