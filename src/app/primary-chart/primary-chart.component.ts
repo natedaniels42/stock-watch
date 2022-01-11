@@ -10,30 +10,37 @@ export class PrimaryChartComponent implements OnChanges {
   graph: any = {
     data: [],
     layout: {
+      plot_bgcolor: 'rgba(0,0,0,0)',
+      paper_bgcolor: 'rgba(0,0,0,0)',
+      candlestickmode: 'group',
       dragmode: 'zoom',
       showlegend: true,
+      showgrid: false,
+      legend: {
+        orientation: 'h',
+        y: 10
+      },
       xaxis: {
+        showgrid: false,
         autorange: true,
+        zeroline: false,
         title: 'Date',
         reangeselector: {
           x: 0, 
           y: 1.2,
           xanchor: 'left',
           font: {size: 8},
-          buttons: [{
-            step: 'month',
-            stepmode: 'backward',
-            count: 1,
-            label: '1 month'
-          }, {
-            step: 'all',
-            label: 'All dates'
-          }]
         }
       },
       yaxis: {
+        title: 'Amount',
         autorange: true,
+        zeroline: false
       }
+    },
+    config: {
+      responsive: true,
+      displayModeBar: false
     }
   }
   constructor() { }
@@ -45,15 +52,21 @@ export class PrimaryChartComponent implements OnChanges {
       const low = data.data.map((time: any) => time.low);
       const open = data.data.map((time: any) => time.open);
       const close = data.data.map((time: any) => time.close);
-
+      const random1 = Math.floor(Math.random() * 255);
+      const random2 = Math.floor(Math.random() * 255);
+      const random3 = Math.floor(Math.random() * 255);
+      const random4 = Math.floor(Math.random() * 255);
+      const random5 = Math.floor(Math.random() * 255);
+      const random6 = Math.floor(Math.random() * 255);
       return {
+        title: data.name,
         x: xAxis,
         high: high,
         low: low,
         open: open,
         close: close,
-        increasing: {line: {color: 'green'}},
-        decreasing: {line: {color: 'red'}},
+        increasing: {line: {color: `rgb(${random1}, ${random2}, ${random3})`}},
+        decreasing: {line: {color: `rgb(${random4}, ${random5}, ${random6})`}},
         line: {color: 'blue'},
         type: 'candlestick',
         xaxis: 'x',

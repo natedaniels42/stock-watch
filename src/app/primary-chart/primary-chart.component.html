@@ -1,5 +1,7 @@
-<p>primary-chart works!</p>
-<p *ngFor="let data of historicalData">{{data.name}}</p>
-<plotly-plot 
-    [data]="graph.data"
-    [layout]="graph.layout"></plotly-plot>
+<div *ngIf="historicalData.length">
+    <p>primary-chart works!</p>
+    <p *ngFor="let data of historicalData">{{data.name}}</p>
+    <plotly-plot 
+        [data]="graph.data"
+        [layout]="graph.layout"></plotly-plot>
+</div>
