@@ -25,6 +25,7 @@ export class PrimaryChartComponent implements OnChanges {
         autorange: true,
         zeroline: false,
         title: 'Date',
+        color: '#b0a4dc',
         reangeselector: {
           x: 0, 
           y: 1.2,
@@ -34,6 +35,7 @@ export class PrimaryChartComponent implements OnChanges {
       },
       yaxis: {
         title: 'Amount',
+        color: '#b0a4dc', 
         autorange: true,
         zeroline: false
       }
@@ -59,7 +61,7 @@ export class PrimaryChartComponent implements OnChanges {
       const random5 = Math.floor(Math.random() * 255);
       const random6 = Math.floor(Math.random() * 255);
       return {
-        title: data.name,
+        name: data.name,
         x: xAxis,
         high: high,
         low: low,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'secondary-chart',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./secondary-chart.component.scss']
 })
 export class SecondaryChartComponent implements OnInit {
-
+  @Input() stock: any = {};
+  
   constructor() { }
 
   ngOnInit(): void {
