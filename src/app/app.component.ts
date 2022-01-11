@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NewsService } from './news.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'StockWatch';
 
-  constructor() {  }
+  constructor(public newsService: NewsService) {  }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
+
+  handleClick(event: Event) {
+    event.preventDefault();
+    
+    this.newsService.searchNews()
+      .then((response: any) => {
+        console.log(response);
+      })
+  }
 }
