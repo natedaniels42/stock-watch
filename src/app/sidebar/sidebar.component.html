@@ -1,1 +1,6 @@
-<p>sidebar works!</p>
+<div id="logo-container">
+    <div *ngFor="let stock of stockList">
+        <img src={{stock.image}} width="50px">
+        <p>{{stock.symbol}}</p>
+    </div>
+</div>

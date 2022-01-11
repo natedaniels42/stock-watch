@@ -7,7 +7,7 @@ import { NewsService } from '../news.service';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
-  @Input() stockList: string[] = []
+  @Input() stockList: {symbol: string, image: string}[] = []
   newsResults: any = []; 
   constructor(public newsService: NewsService) { }
 

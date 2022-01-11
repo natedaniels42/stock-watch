@@ -9,7 +9,7 @@ import { SocketService } from '../socket.service';
 export class DashboardComponent implements OnInit {
   index: number = 0;
   timer: number = 0;
-  stockList: string[] = [];
+  stockList: {symbol: string, image: string}[] = [];
   currentStocks: any = [];
   historicalData: any = []; 
 
@@ -42,7 +42,6 @@ export class DashboardComponent implements OnInit {
       }
 
     }, 1000);
-
   }
 
   moveIndex(value: number) {
