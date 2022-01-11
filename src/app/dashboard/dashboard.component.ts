@@ -29,6 +29,8 @@ export class DashboardComponent implements OnInit {
 
     this.getCurrent();
 
+    this.getHistorical(1440);
+
     setInterval(() => {
       this.getCurrent();
     }, 5000);
@@ -39,9 +41,11 @@ export class DashboardComponent implements OnInit {
     this.index = (this.index + 1) % 10;
   }
 
-  getHistorical(data: any, event: Event) {
-    event.preventDefault();
+  getHistorical(data: any, event?: Event) {
+    if (event) {
+      event.preventDefault();
+    }
 
-    this.socketService.emit('historical', {'request-type': 'historical', 'data': {'symbols': /*this.stockList*/ ['F'], interval: data}});
+    this.socketService.emit('historical', {'request-type': 'historical', 'data': {'symbols': this.stockList, interval: data}});
   }
 }
