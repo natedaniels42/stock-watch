@@ -37,9 +37,23 @@ export class DashboardComponent implements OnInit {
       if (this.timer === 0) {
         this.index = (this.index + 1) % 10;
       }
-      this.getCurrent();
+      if (this.timer % 5 === 0) {
+        this.getCurrent();
+      }
 
     }, 1000);
+
+  }
+
+  moveIndex(value: number) {
+    this.index += value;
+    if (this.index === -1) {
+      this.index = 9;
+    } else if (this.index === 10) {
+      this.index = 0;
+    }
+    this.timer = 0;
+    this.getCurrent();
   }
 
   getCurrent() {

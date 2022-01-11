@@ -21,20 +21,24 @@ export class PrimaryChartComponent implements OnChanges {
         y: 10
       },
       xaxis: {
+        type: {
+          enumerated: 'multicategory'
+        },
         showgrid: false,
         autorange: true,
         zeroline: false,
         title: 'Date',
         color: '#b0a4dc',
-        reangeselector: {
-          x: 0, 
-          y: 1.2,
-          xanchor: 'left',
-          font: {size: 8},
+        rangeslider: {
+          visible: false,
+          // x: 0, 
+          // y: 1.2,
+          // xanchor: 'left',
+          // font: {size: 8},
         }
       },
       yaxis: {
-        title: 'Amount',
+        title: '$USD',
         color: '#b0a4dc', 
         autorange: true,
         zeroline: false
