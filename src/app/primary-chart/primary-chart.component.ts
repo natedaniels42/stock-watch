@@ -24,6 +24,7 @@ export class PrimaryChartComponent implements OnChanges {
         type: {
           enumerated: 'multicategory'
         },
+        tickangle: -45,
         showgrid: false,
         autorange: true,
         zeroline: false,

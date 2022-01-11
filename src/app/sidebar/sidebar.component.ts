@@ -13,10 +13,15 @@ export class SidebarComponent implements OnInit {
   start: number = 0;
   end: number = 0;
   invalid: boolean = false;
+  dark: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleMode() {
+    this.dark ? this.dark = false : this.dark = true;
   }
 
   handleClick(event: Event) {
