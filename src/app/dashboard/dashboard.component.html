@@ -10,3 +10,4 @@
   <button (click)="getHistorical(1440, $event)">1 day</button>
   <primary-chart [historicalData]="historicalData"></primary-chart>
   <secondary-chart-container [currentStocks]="currentStocks" (indexEvent)="moveIndex($event)"></secondary-chart-container>
+  <news [stockList]="stockList"></news>

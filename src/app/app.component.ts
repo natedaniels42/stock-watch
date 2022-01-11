@@ -17,8 +17,8 @@ export class AppComponent {
 
   handleClick(event: Event) {
     event.preventDefault();
-    
-    this.newsService.searchNews()
+
+    this.newsService.searchNews('TSLA')
       .then((response: any) => {
         console.log(response);
       })

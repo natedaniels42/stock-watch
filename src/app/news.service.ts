@@ -5,14 +5,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class NewsService {
-  api_key: string = 'RHgijdhwvXFZSiNEw3YdE5XnwpvkOTh1hbT6ecjH'
-  url: string = `https://api.marketaux.com/v1/news/all?symbols=T&filter_entities=true&language=en&api_token=${this.api_key}`
   
   constructor(private http: HttpClient) { }
 
-  public searchNews() {
+  public searchNews(value: string) {
     return new Promise((resolve, reject) => {
-      this.http.get(this.url).subscribe(
+      this.http.get(`https://api.marketaux.com/v1/news/all?symbols=${value}&filter_entities=true&language=en&api_token=RHgijdhwvXFZSiNEw3YdE5XnwpvkOTh1hbT6ecjH`).subscribe(
         (response) => {
           resolve(response);
         }, (err) => {
