@@ -1,6 +1,6 @@
 <div id="logo-container">
-    <div *ngFor="let stock of stockList">
-        <img src={{stock.image}} width="50px">
-        <p>{{stock.symbol}}</p>
+    <div *ngFor="let stock of stockList" id={{stock.symbol}} (click)="handleClick($event)">
+        <img src={{stock.image}} width="50px" id={{stock.symbol}}>
+        <p id={{stock.symbol}}>{{stock.symbol}}</p>
     </div>
 </div>

@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
       if (this.timer === 0) {
         this.index = (this.index + 1) % 10;
       }
-      if (this.timer % 5 === 0) {
+      if (this.timer % 2 === 0) {
         this.getCurrent();
       }
 
@@ -57,7 +57,6 @@ export class DashboardComponent implements OnInit {
 
   getCurrent() {
     this.socketService.emit('live', {'request-type': 'live', 'data': [this.index, (this.index + 1) % 10, (this.index + 2) % 10]});
-    // this.index = (this.index + 1) % 10;
   }
 
   getHistorical(data: any, event?: Event) {
