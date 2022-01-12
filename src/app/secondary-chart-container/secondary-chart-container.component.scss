@@ -6,13 +6,31 @@
     margin: 1vh 0;
 }
 
+.arrow-container {
+    position: absolute;
+    top: 48%;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-container.dark {
+    background-color: #b0a4dc;
+}
 
 .arrow {
-    position: absolute;
+    z-index: 10;
     width: 25px;
     height: 25px;
-    z-index: 10;
-    top: 48%;
+}
+
+.arrow.dark {
+    background-color: #2e1c3d;
 }
 
 #left {
