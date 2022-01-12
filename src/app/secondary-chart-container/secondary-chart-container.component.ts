@@ -7,6 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SecondaryChartContainerComponent implements OnInit {
   @Input() currentStocks: any = [];
+  @Input() dark: boolean = false;
   @Output() indexEvent = new EventEmitter();
   colors: string[] = ['red', 'green', 'yellow'];
 

@@ -1,4 +1,4 @@
-<div id="dashboard-container">
+<div id="dashboard-container" [ngClass]="dark ? 'dark' : ''">
     <div id="left-column">
         <sidebar 
             [stockList]="stockList" 
@@ -6,10 +6,17 @@
             (darkModeToggle)="setDarkMode($event)"></sidebar>
     </div>
     <div id="middle-column">
-        <primary-chart [historicalData]="historicalData"></primary-chart>
-        <secondary-chart-container [currentStocks]="currentStocks" (indexEvent)="moveIndex($event)"></secondary-chart-container>
+        <primary-chart 
+            [historicalData]="historicalData"
+            [dark]="dark"></primary-chart>
+        <secondary-chart-container 
+            [currentStocks]="currentStocks" 
+            [dark]="dark"
+            (indexEvent)="moveIndex($event)"></secondary-chart-container>
     </div>
     <div id="right-column">
-        <news [stockList]="stockList"></news>
+        <news 
+            [stockList]="stockList"
+            [dark]="dark"></news>
     </div>
 </div>

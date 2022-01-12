@@ -1,5 +1,9 @@
 <div id="container">
     <img src="assets/images/arrow.png" id="left" class="arrow" (click)="handleClick(-1)">
-    <secondary-chart *ngFor="let stock of currentStocks; let i = index" [stock]="stock" [color]="colors[i]"></secondary-chart>
+    <secondary-chart 
+        *ngFor="let stock of currentStocks; let i = index" 
+        [stock]="stock" 
+        [color]="colors[i]"
+        [dark]="dark"></secondary-chart>
     <img src="assets/images/arrow.png" id="right" class="arrow" (click)="handleClick(1)">
 </div>

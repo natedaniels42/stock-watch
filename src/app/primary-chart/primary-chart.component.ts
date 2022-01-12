@@ -7,6 +7,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 })
 export class PrimaryChartComponent implements OnChanges {
   @Input() historicalData: any = []; 
+  @Input() dark: boolean = false;
   graph: any = {
     data: [],
     layout: {

@@ -8,6 +8,7 @@ import { NewsService } from '../news.service';
 })
 export class NewsComponent implements OnInit {
   @Input() stockList: {symbol: string, image: string}[] = []
+  @Input() dark: boolean = false;
   newsResults: any = []; 
   constructor(public newsService: NewsService) { }
 

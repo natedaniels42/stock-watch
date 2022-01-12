@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SecondaryChartComponent implements OnInit {
   @Input() stock: any = {};
   @Input() color: string = '';
+  @Input() dark: boolean = false;
   secondaryChart: any = {};
 
   constructor() { }
