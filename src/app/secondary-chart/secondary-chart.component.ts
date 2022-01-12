@@ -29,7 +29,8 @@ export class SecondaryChartComponent implements OnInit {
       }],
       layout: {
         title: {
-          text: `${this.stock.name} $${currentPrice}`,
+          text: `${this.stock.name} $${currentPrice}`.toUpperCase(),
+          fontSize: '10px',
           xanchor: 'center',
           y: 0.1,
           yanchor: 'top'

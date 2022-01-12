@@ -8,12 +8,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class SidebarComponent implements OnInit {
   @Input() stockList: {symbol: string, image: string}[] = [];
   @Output() historicalSearch = new EventEmitter();
-  symbols: string[] = [];
+  symbols: string[] = ['F', 'T'];
   interval: number = 0;
   start: number = 0;
   end: number = 0;
   invalid: boolean = false;
   dark: boolean = false;
+  active = [true,true,false,false,false,false,false,false,false,false];
 
   constructor() { }
 
@@ -26,10 +27,14 @@ export class SidebarComponent implements OnInit {
 
   handleClick(event: Event) {
     const target = (event.target as HTMLElement);
+    const index = this.stockList.map(stock => stock.symbol).indexOf(target.id);
+    console.log(index);
     if (this.symbols.includes(target.id)) {
       this.symbols = this.symbols.filter(symbol => symbol !== target.id);
+      this.active[index] = false;
     } else {
       this.symbols.push(target.id);
+      this.active[index] = true;
     }
     console.log(this.symbols);
   }

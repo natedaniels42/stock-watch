@@ -5,9 +5,9 @@
         </div>
     </div>
     <div id="logo-container">
-        <div *ngFor="let stock of stockList" id={{stock.symbol}} class="logo" (click)="handleClick($event)">
+        <div *ngFor="let stock of stockList; let i = index" id={{stock.symbol}} [ngClass]="active[i] === true ? 'logo active' : 'logo'" (click)="handleClick($event)">
             <img src={{stock.image}} id={{stock.symbol}}>
-            <p id={{stock.symbol}}>{{stock.symbol}}</p>
+            <p class="bold" id={{stock.symbol}}>{{stock.symbol}}</p>
         </div>
     </div>
     <div id="date-container">

@@ -4,6 +4,14 @@
     height: 100vh;
 }
 
+p {
+    color: #ddd;
+}
+
+.active p {
+    color: #000;
+}
+
 #logo-container {
     display: flex;
     flex-direction: column;
@@ -14,6 +22,7 @@
 .logo {
     display: flex;
     padding: 15px 5px;
+    z-index: 10;
 
     img {
         width: 25px;

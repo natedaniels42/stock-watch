@@ -6,12 +6,19 @@
     margin: 1vh 0;
 }
 
-#left {
-    transform: rotate(.5turn);
-}
 
 .arrow {
     position: absolute;
     width: 25px;
     height: 25px;
+    z-index: 10;
+    top: 48%;
+}
+
+#left {
+    transform: rotate(.5turn);
+}
+
+#right {
+    right: 0;
 }
