@@ -1,4 +1,4 @@
-<div *ngIf="secondaryChart.data" class="secondary-chart">
+<div *ngIf="secondaryChart.data" class="secondary-chart" [ngClass]="dark ? 'dark' : ''">
     <plotly-plot 
         [data]="secondaryChart.data"
         [layout]="secondaryChart.layout"
