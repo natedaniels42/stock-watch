@@ -14,7 +14,8 @@ export class SidebarComponent implements OnInit {
   end: number = 0;
   invalid: boolean = false;
   dark: boolean = false;
-  active = [true,true,false,false,false,false,false,false,false,false];
+  activeSymbols = [true,true,false,false,false,false,false,false,false,false];
+  activeIntervals = [false, false, false, false];
 
   constructor() { }
 
@@ -31,10 +32,10 @@ export class SidebarComponent implements OnInit {
     console.log(index);
     if (this.symbols.includes(target.id)) {
       this.symbols = this.symbols.filter(symbol => symbol !== target.id);
-      this.active[index] = false;
+      this.activeSymbols[index] = false;
     } else {
       this.symbols.push(target.id);
-      this.active[index] = true;
+      this.activeSymbols[index] = true;
     }
     console.log(this.symbols);
   }
@@ -57,6 +58,22 @@ export class SidebarComponent implements OnInit {
   handleIntervalClick(event: Event) {
     this.interval = Number((event.target as HTMLElement).id);
     console.log(this.interval);
+    switch(this.interval) {
+      case 5:
+        this.activeIntervals = [true, false, false, false];
+        break;
+      case 15:
+        this.activeIntervals = [false, true, false, false];
+        break;
+      case 60:
+        this.activeIntervals = [false, false, true, false];
+        break;
+      case 1440:
+        this.activeIntervals = [false, false, false, true];
+        break;
+      default:
+        break;
+    }
   }
 
   handleSubmit(event: Event) {

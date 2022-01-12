@@ -5,7 +5,7 @@
         </div>
     </div>
     <div id="logo-container">
-        <div *ngFor="let stock of stockList; let i = index" id={{stock.symbol}} [ngClass]="active[i] === true ? 'logo active' : 'logo'" (click)="handleClick($event)">
+        <div *ngFor="let stock of stockList; let i = index" id={{stock.symbol}} [ngClass]="activeSymbols[i] === true ? 'logo active' : 'logo'" (click)="handleClick($event)">
             <img src={{stock.image}} id={{stock.symbol}}>
             <p class="bold" id={{stock.symbol}}>{{stock.symbol}}</p>
         </div>
@@ -18,10 +18,10 @@
         <input type="datetime-local" name="end" id="end" (focus)="invalid = false" (change)="handleChange($event)">
     </div>
     <div id="interval-container">
-        <div (click)="handleIntervalClick($event)" id="5">5</div>
-        <div (click)="handleIntervalClick($event)" id="15">15</div>
-        <div (click)="handleIntervalClick($event)" id="60">1 hour</div>
-        <div (click)="handleIntervalClick($event)" id="1440">1 day</div>
+        <div (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[0] ? 'active-interval' : ''" id="5">5</div>
+        <div (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[1] ? 'active-interval' : ''" id="15">15</div>
+        <div (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[2] ? 'active-interval' : ''" id="60">1 hour</div>
+        <div (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[3] ? 'active-interval' : ''" id="1440">1 day</div>
     </div>
     <button type="submit" (click)="handleSubmit($event)">Get Data</button>
 </section>
