@@ -1,6 +1,9 @@
 <div id="dashboard-container">
     <div id="left-column">
-        <sidebar [stockList]="stockList" (historicalSearch)="getHistorical($event)"></sidebar>
+        <sidebar 
+            [stockList]="stockList" 
+            (historicalSearch)="getHistorical($event)"
+            (darkModeToggle)="setDarkMode($event)"></sidebar>
     </div>
     <div id="middle-column">
         <primary-chart [historicalData]="historicalData"></primary-chart>

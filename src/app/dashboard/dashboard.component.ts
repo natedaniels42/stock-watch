@@ -9,6 +9,7 @@ import { SocketService } from '../socket.service';
 export class DashboardComponent implements OnInit {
   index: number = 0;
   timer: number = 0;
+  dark: boolean = false;
   stockList: {symbol: string, image: string}[] = [];
   currentStocks: any = [];
   historicalData: any = []; 
@@ -51,6 +52,11 @@ export class DashboardComponent implements OnInit {
       }
 
     }, 1000);
+  }
+
+  setDarkMode(value: boolean) {
+    this.dark = value;
+    console.log(this.dark);
   }
 
   moveIndex(value: number) {

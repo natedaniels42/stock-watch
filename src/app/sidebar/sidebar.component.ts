@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class SidebarComponent implements OnInit {
   @Input() stockList: {symbol: string, image: string}[] = [];
   @Output() historicalSearch = new EventEmitter();
+  @Output() darkModeToggle = new EventEmitter();
   symbols: string[] = ['F', 'T'];
   interval: number = 0;
   start: number = 0;
@@ -24,6 +25,7 @@ export class SidebarComponent implements OnInit {
 
   toggleMode() {
     this.dark ? this.dark = false : this.dark = true;
+    this.darkModeToggle.emit(this.dark);
   }
 
   handleClick(event: Event) {
