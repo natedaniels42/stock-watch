@@ -32,10 +32,10 @@ export class PrimaryChartComponent implements OnChanges {
         color: '#b0a4dc',
         rangeslider: {
           visible: false,
-          // x: 0, 
-          // y: 1.2,
-          // xanchor: 'left',
-          // font: {size: 8},
+          x: 0, 
+          y: 1.2,
+          xanchor: 'left',
+          font: {size: 8},
         }
       },
       yaxis: {
@@ -62,9 +62,6 @@ export class PrimaryChartComponent implements OnChanges {
       const random1 = Math.floor(Math.random() * 255);
       const random2 = Math.floor(Math.random() * 255);
       const random3 = Math.floor(Math.random() * 255);
-      const random4 = Math.floor(Math.random() * 255);
-      const random5 = Math.floor(Math.random() * 255);
-      const random6 = Math.floor(Math.random() * 255);
       return {
         name: data.symbol,
         x: xAxis,
@@ -72,8 +69,13 @@ export class PrimaryChartComponent implements OnChanges {
         low: low,
         open: open,
         close: close,
-        increasing: {line: {color: `rgb(${random1}, ${random2}, ${random3})`}},
-        decreasing: {line: {color: `rgb(${random4}, ${random5}, ${random6})`}},
+        increasing: {line: {color: `rgba(${random1}, ${random2}, ${random3}, 1)`}},
+        decreasing: {
+          line: {
+          color: `rgba(${random1}, ${random2}, ${random3}, 1)`,
+          },
+          fillcolor: `rgba(${random1}, ${random2}, ${random3}, .1)`
+        },
         line: {color: 'blue'},
         type: 'candlestick',
         xaxis: 'x',

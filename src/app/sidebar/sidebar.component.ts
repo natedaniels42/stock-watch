@@ -90,10 +90,6 @@ export class SidebarComponent implements OnInit {
           end: this.end,
           interval: this.interval
         });
-        this.symbols = [];
-        this.interval = 0;
-        this.start = 0;
-        this.end = 0;
     } else {
       console.log('something is wrong')
     }
