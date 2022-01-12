@@ -1,10 +1,17 @@
 #container {
+    position: relative;
     display: flex;
     width: 100%;
-    margin-top: 100px;
-    height: 30vh;
+    height: 36vh;
+    margin: 1vh 0;
 }
 
 #left {
     transform: rotate(.5turn);
+}
+
+.arrow {
+    position: absolute;
+    width: 25px;
+    height: 25px;
 }

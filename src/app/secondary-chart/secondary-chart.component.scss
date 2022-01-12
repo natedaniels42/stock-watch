@@ -1,3 +1,12 @@
 .secondary-chart {
-    width: 30vw;
+    width: 22vw;
+    height: 36vh;
+    background-color: #fff;
+    margin: 1vh;
+    border-radius: 10px;
+}
+
+.js-plotly-plot,
+.plot-container {
+    height: 100% !important;
 }

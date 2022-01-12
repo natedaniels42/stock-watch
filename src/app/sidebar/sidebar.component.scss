@@ -1,6 +1,24 @@
+#sidebar-container {
+    background-color: #fff;
+    border-radius: 10px;
+    height: 100vh;
+}
+
 #logo-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    padding: 20px 20px 0 20px;
+}
+
+.logo {
+    display: flex;
+    padding: 15px 5px;
+
+    img {
+        width: 25px;
+        margin-right: 10px;
+    }
 }
 
 #slider {
@@ -8,7 +26,7 @@
     width: 50px;
     height: 25px;
     border-radius: 50px;
-    border: 1px solid black;
+    background-color: #000;
 }
 
 #circle {
@@ -17,7 +35,16 @@
     height: 20px;
     border-radius: 50%;
     margin: 2px;
-    background-color: black;
+    background-color: #fff;
+}
+
+#date-container {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 50%;
 }
 
 .dark {

@@ -1,23 +1,27 @@
-<div id="slider">
-    <div id="circle" [ngClass]="dark ? 'dark' : ''"(click)="toggleMode()"></div>
-</div>
-<div id="logo-container">
-    <div *ngFor="let stock of stockList" id={{stock.symbol}} (click)="handleClick($event)">
-        <img src={{stock.image}} width="50px" id={{stock.symbol}}>
-        <p id={{stock.symbol}}>{{stock.symbol}}</p>
+<section id="sidebar-container">
+    <div>
+        <div id="slider">
+            <div id="circle" [ngClass]="dark ? 'dark' : ''"(click)="toggleMode()"></div>
+        </div>
     </div>
-</div>
-<div id="data-container">
-    <p *ngIf="invalid" class="error">Start time must be before end time</p>
-    <label for="start">Starting Time:</label>
-    <input type="datetime-local" name="start" id="start" (focus)="invalid = false" (change)="handleChange($event)">
-    <label for="end">Ending Time:</label>
-    <input type="datetime-local" name="end" id="end" (focus)="invalid = false" (change)="handleChange($event)">
-</div>
-<div id="interval-container">
-    <div (click)="handleIntervalClick($event)" id="5">5</div>
-    <div (click)="handleIntervalClick($event)" id="15">15</div>
-    <div (click)="handleIntervalClick($event)" id="60">1 hour</div>
-    <div (click)="handleIntervalClick($event)" id="1440">1 day</div>
-</div>
-<button type="submit" (click)="handleSubmit($event)">Get Data</button>
+    <div id="logo-container">
+        <div *ngFor="let stock of stockList" id={{stock.symbol}} class="logo" (click)="handleClick($event)">
+            <img src={{stock.image}} id={{stock.symbol}}>
+            <p id={{stock.symbol}}>{{stock.symbol}}</p>
+        </div>
+    </div>
+    <div id="date-container">
+        <p *ngIf="invalid" class="error">Start time must be before end time</p>
+        <label for="start">Starting Time:</label>
+        <input type="datetime-local" name="start" id="start" (focus)="invalid = false" (change)="handleChange($event)">
+        <label for="end">Ending Time:</label>
+        <input type="datetime-local" name="end" id="end" (focus)="invalid = false" (change)="handleChange($event)">
+    </div>
+    <div id="interval-container">
+        <div (click)="handleIntervalClick($event)" id="5">5</div>
+        <div (click)="handleIntervalClick($event)" id="15">15</div>
+        <div (click)="handleIntervalClick($event)" id="60">1 hour</div>
+        <div (click)="handleIntervalClick($event)" id="1440">1 day</div>
+    </div>
+    <button type="submit" (click)="handleSubmit($event)">Get Data</button>
+</section>

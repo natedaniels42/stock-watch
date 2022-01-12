@@ -36,6 +36,7 @@ export class SecondaryChartComponent implements OnInit {
         },
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
+        autosize: true,
         titlefont: {
           color: '#b0a4dc',
         },
@@ -53,6 +54,9 @@ export class SecondaryChartComponent implements OnInit {
       config: {
         responsive: true,
         displayModeBar: false
+      },
+      style: {
+        height: '100%'
       }
     }
   }

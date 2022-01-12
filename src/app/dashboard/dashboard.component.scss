@@ -1,0 +1,16 @@
+#dashboard-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #eee;
+}
+
+#left-column, #right-column {
+    width: 14vw;
+}
+
+#middle-column {
+    width: 70vw;
+    margin: 0 1vw;
+}
+
