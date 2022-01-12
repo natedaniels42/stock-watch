@@ -1,4 +1,4 @@
-<div id="news-container">
+<div id="news-container" [ngClass]="dark ? 'dark' : ''">
     <h2>News</h2>
     <select name="symbol" #select (change)="handleChange($event)">
         <option value="">Choose A Stock:</option>

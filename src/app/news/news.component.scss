@@ -19,6 +19,7 @@
         margin: 10px 0;
         align-self: center;
         max-width: 90%;
+        padding: 2px;
     }
 
     .story {
@@ -30,6 +31,27 @@
         a {
             text-decoration: none;
             color: #000;
+        }
+    }
+}
+
+#news-container.dark {
+    background-color: #000;
+
+    h2 {
+        color: #b0a4dc;
+    }
+
+    select {
+        color: #b0a4dc;
+        background-color: #2e1c3d;
+    }
+
+    .story {
+        background-color: #2e1c3d;
+
+        a {
+            color: #b0a4dc;
         }
     }
 }
