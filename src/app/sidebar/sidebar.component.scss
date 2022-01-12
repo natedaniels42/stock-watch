@@ -4,6 +4,29 @@
     height: 100vh;
 }
 
+#sidebar-container.dark {
+    background-color: #000;
+
+    .logo p {
+        color: #aaa;
+    }
+
+    .logo.active p {
+        color: #fff;
+    }
+
+    input {
+        color: #b0a4dc;
+        background-color: #2e1c3d;
+        color: -internal-light-dark(black, white);
+    }
+
+    ::-webkit-calendar-picker-indicator {
+        filter: invert(.5);
+        // filter: invert(100%) sepia() saturate(10000%) hue-rotate(120deg);
+    }
+}
+
 p {
     color: #ddd;
 }
@@ -36,15 +59,24 @@ p {
     height: 25px;
     border-radius: 50px;
     background-color: #000;
+    
+    #circle {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 2px;
+        background-color: #fff;
+    }
 }
 
-#circle {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: 2px;
+#slider.dark {
     background-color: #fff;
+
+    #circle {
+        background-color: #000;
+        right: 0;
+    }
 }
 
 #date-container {
@@ -74,11 +106,6 @@ input {
     .active-interval {
         background-color: lightblue;
     }
-}
-
-.dark {
-    right: 0;
-    background-color: white !important;
 }
 
 .error {

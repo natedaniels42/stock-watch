@@ -14,7 +14,7 @@ export class SecondaryChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const currentData = this.stock.data.slice(this.stock.data.length - 30, this.stock.data.length);
+    const currentData = this.stock.data;
     const xAxis = currentData.map((point: any) => new Date(point.timestamp));
     const yAxis = currentData.map((point: any) => point.amount);
     const currentPrice = currentData[currentData.length - 1].amount;

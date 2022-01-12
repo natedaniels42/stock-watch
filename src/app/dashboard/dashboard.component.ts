@@ -25,13 +25,16 @@ export class DashboardComponent implements OnInit {
     this.socketService.listen('list').subscribe((data: any) => {
       this.stockList = data.symbols;
     })
-
+    
     this.socketService.listen('live').subscribe((data: any) => {
       this.currentStocks = data.data;
+      console.log(this.currentStocks);
     })
 
     this.socketService.listen('historical').subscribe((data: any) => {
       this.historicalData = data.data.stocks;
+      console.log('Historical Data');
+      console.log(this.historicalData);
     })
 
     this.getCurrent();

@@ -1,7 +1,7 @@
-<section id="sidebar-container">
+<section id="sidebar-container" [ngClass]="dark ? 'dark' : ''">
     <div>
-        <div id="slider">
-            <div id="circle" [ngClass]="dark ? 'dark' : ''"(click)="toggleMode()"></div>
+        <div id="slider" [ngClass]="dark ? 'dark' : ''">
+            <div id="circle" (click)="toggleMode()"></div>
         </div>
     </div>
     <div id="logo-container">
