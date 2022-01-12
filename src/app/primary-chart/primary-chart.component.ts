@@ -19,7 +19,8 @@ export class PrimaryChartComponent implements OnChanges {
       showgrid: false,
       legend: {
         orientation: 'h',
-        y: 10
+        y: 10,
+        font: {color: '#b0a4dc'}
       },
       xaxis: {
         type: {
