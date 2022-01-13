@@ -20,6 +20,18 @@
         align-self: center;
         max-width: 90%;
         padding: 2px;
+        border-radius: 2px;
+        background-color: #eee;
+        border: none;
+        box-shadow: 1px 1px 5px #000;
+    
+        option {
+            background-color: blue;
+        }   
+    }
+
+    select:focus {
+        opacity: .5;
     }
 
     .story {

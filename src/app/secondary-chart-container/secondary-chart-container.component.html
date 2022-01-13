@@ -1,5 +1,5 @@
-<div id="container" *ngIf="currentStocks.length > 0">
-    <div [ngClass]="dark ? 'arrow-container dark': 'arrow-container'">
+<div id="container" *ngIf="currentStocks.length > 0" [ngClass]="dark ? 'dark' : ''">
+    <div class="arrow-container">
         <img 
             src="assets/images/arrow.png" 
             id="left" 
@@ -11,7 +11,7 @@
         [stock]="stock" 
         [color]="colors[i]"
         [dark]="dark"></secondary-chart>
-    <div [ngClass]="dark ? 'arrow-container dark': 'arrow-container'" id="right">
+    <div class="arrow-container" id="right">
         <img src="assets/images/arrow.png" class="arrow" (click)="handleClick(1)">
     </div>
 </div>

@@ -17,7 +17,7 @@ export class SidebarComponent implements OnInit {
   dark: boolean = false;
   activeSymbols = [true,true,false,false,false,false,false,false,false,false];
   activeIntervals = [false, false, false, false];
-
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -58,8 +58,11 @@ export class SidebarComponent implements OnInit {
   }
 
   handleIntervalClick(event: Event) {
-    this.interval = Number((event.target as HTMLElement).id);
+    this.interval = Number((event.target as HTMLElement).id) === this.interval 
+      ? 0 : Number((event.target as HTMLElement).id);
     console.log(this.interval);
+    console.log(`Start: ${this.start}`);
+    console.log(`End: ${this.end}`);
     switch(this.interval) {
       case 5:
         this.activeIntervals = [true, false, false, false];
@@ -74,6 +77,7 @@ export class SidebarComponent implements OnInit {
         this.activeIntervals = [false, false, false, true];
         break;
       default:
+        this.activeIntervals = [false, false, false, false];
         break;
     }
   }
@@ -92,7 +96,11 @@ export class SidebarComponent implements OnInit {
           end: this.end,
           interval: this.interval
         });
-    } else {
+        this.start = 0;
+        this.end = 0;
+        this.interval = 0;
+        this.activeIntervals = [false, false, false, false];    
+      } else {
       console.log('something is wrong')
     }
   }

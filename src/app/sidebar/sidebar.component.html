@@ -1,6 +1,6 @@
 <section id="sidebar-container" [ngClass]="dark ? 'dark' : ''">
     <div>
-        <div id="slider" [ngClass]="dark ? 'dark' : ''">
+        <div id="slider">
             <div id="circle" (click)="toggleMode()"></div>
         </div>
     </div>
@@ -13,15 +13,34 @@
     <div id="date-container">
         <p *ngIf="invalid" class="error">Start time must be before end time</p>
         <label for="start">Starting Time:</label>
-        <input type="datetime-local" name="start" id="start" (focus)="invalid = false" (change)="handleChange($event)">
+        <input 
+            type="datetime-local" 
+            name="start" 
+            id="start"
+            #startInput 
+            (focus)="invalid = false" 
+            (change)="handleChange($event)">
         <label for="end">Ending Time:</label>
-        <input type="datetime-local" name="end" id="end" (focus)="invalid = false" (change)="handleChange($event)">
+        <input 
+            type="datetime-local" 
+            name="end" 
+            id="end"
+            #endInput
+            (focus)="invalid = false" 
+            (change)="handleChange($event)">
     </div>
+    <p class="interval-label">Interval: </p>
     <div id="interval-container">
-        <div (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[0] ? 'active-interval' : ''" id="5">5 min</div>
-        <div (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[1] ? 'active-interval' : ''" id="15">15 min</div>
-        <div (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[2] ? 'active-interval' : ''" id="60">1 hr</div>
-        <div (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[3] ? 'active-interval' : ''" id="1440">1 day</div>
+        <p (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[0] ? 'active-interval' : ''" id="5">5 min</p>
+        <p (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[1] ? 'active-interval' : ''" id="15">15 min</p>
+        <p (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[2] ? 'active-interval' : ''" id="60">1 hr</p>
+        <p (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[3] ? 'active-interval' : ''" id="1440">1 day</p>
     </div>
-    <button type="submit" (click)="handleSubmit($event)">Get Data</button>
+    <button 
+        type="submit" 
+        [ngClass]="symbols.length > 0 && interval && start && end ? '' : 'disabled'"
+        (click)="handleSubmit($event); startInput.value = ''; endInput.value = ''"
+        id="submit">Get Data</button>
 </section>
+
+

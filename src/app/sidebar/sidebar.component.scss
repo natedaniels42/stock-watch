@@ -29,7 +29,7 @@
 
     .logo {
         display: flex;
-        padding: 15px 5px;
+        padding: 10px 5px;
         z-index: 10;
     
         img {
@@ -46,10 +46,93 @@
     .logo.active p {
         color: #000;
     }
+    
+    #date-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+        height: 150px;
+        
+        input {
+            max-width: 90%;
+            background-color: #eee;
+            padding: 2px;
+            border-radius: 2px;
+            border: none;
+            box-shadow: 1px 1px 5px #000;
+            cursor: pointer;
+        }
+
+        input:hover {
+            opacity: .5;
+        }
+        
+        .error {
+            color: red;
+        }
+    }
+    
+    .interval-label {
+        margin: 15px;
+    }
+
+    #interval-container {
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        p {
+            padding: 2px;
+            border-radius: 2px;
+            background-color: #eee;
+            box-shadow: 1px 1px 5px #000;
+            margin: 2px;
+            cursor: pointer;
+        }
+
+        p:hover {
+            opacity: .5;
+        }
+    
+        .active-interval {
+            background-color: lightblue;
+        }
+    }
+
+    #submit {
+        border: 3px solid green;
+        padding: 5px;
+        border-radius: 2px;
+        box-shadow: 1px 1px 5px green, inset 1px 1px 5px #ddd;
+        margin: 20px 15px;
+        cursor: pointer;
+    }
+
+    #submit:hover {
+        opacity: .5;
+    }
+
+    #submit.disabled {
+        pointer-events: none;
+        opacity: .5;
+        border: 3px solid red;
+        box-shadow: 1px 1px 5px red;
+    }
 }
 
 #sidebar-container.dark {
     background-color: #000;
+
+    #slider {
+        background-color: #fff;
+    
+        #circle {
+            background-color: #000;
+            right: 0;
+        }
+    }
 
     .logo p {
         color: #aaa;
@@ -59,14 +142,41 @@
         color: #fff;
     }
 
-    input {
+    #date-container {
+        label {
+            color: white;
+        }
+
+        input {
+            color: #b0a4dc;
+            background-color: #2e1c3d;
+        }
+
+        ::-webkit-calendar-picker-indicator {
+            filter: invert(100%) sepia() saturate(1000%) hue-rotate(200deg)
+            brightness(70%) opacity(.7);
+        }
+    }
+
+    .interval-label {
+        color: #fff;
+    }
+
+    #interval-container {
+        p {
+            color: #b0a4dc;
+            background-color: #2e1c3d;
+        }
+
+        .active-interval {
+            color: #2e1c3d;;
+            background-color: #b0a4dc;
+        }
+    }
+
+    #submit {
         color: #b0a4dc;
-        background-color: #fff;
-    }
-
-    ::-webkit-calendar-picker-indicator {
-        filter: invert(100%) sepia() saturate(1000%) hue-rotate(200deg)
-        brightness(70%) opacity(.7);
+        background-color: #2e1c3d;
     }
 }
 
@@ -75,44 +185,6 @@
 
 
 
-#slider.dark {
-    background-color: #fff;
 
-    #circle {
-        background-color: #000;
-        right: 0;
-    }
-}
 
-#date-container {
-    display: flex;
-    flex-direction: column;
-}
 
-input {
-    max-width: 90%;
-    // color: transparent;
-}
-
-#interval-container {
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    div {
-        border: 1px solid #000;
-        padding: 2px;
-        border-radius: 2px;
-        background-color: #eee;
-        margin: 1px;
-    }
-
-    .active-interval {
-        background-color: lightblue;
-    }
-}
-
-.error {
-    color: red;
-}

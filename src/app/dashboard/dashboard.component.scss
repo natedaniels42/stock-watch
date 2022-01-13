@@ -1,20 +1,24 @@
 #dashboard-container {
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
     background-color: #eee;
+    
+    #left-column, #right-column {
+        width: 14vw;
+    }
+    
+    #middle-column {
+        width: 68vw;
+        margin: 0 2vw;
+    }
 }
 
 #dashboard-container.dark {
     background-color: #1b1726;
 }
 
-#left-column, #right-column {
-    width: 14vw;
-}
 
-#middle-column {
-    width: 68vw;
-    margin: 0 2vw;
-}
+
+
 
