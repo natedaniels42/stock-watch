@@ -18,7 +18,16 @@
     background-color: #1b1726;
 }
 
+@media screen and (max-width: 1000px) {
+    #dashboard-container {
+        flex-direction: column;
+    
+        #left-column, #right-column, #middle-column {
+            width: 100vw;
+        }
+    }
 
+}
 
 
 
