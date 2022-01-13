@@ -50,6 +50,9 @@ export class PrimaryChartComponent implements OnChanges {
     config: {
       responsive: true,
       displayModeBar: false
+    },
+    style: {
+      width: '100%'
     }
   }
   constructor() { }

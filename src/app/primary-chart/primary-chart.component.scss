@@ -9,3 +9,11 @@
 #primary-container.dark {
     background-color: #2e1c3d;
 }
+
+@media screen and (max-width: 1000px) {
+    #primary-container {
+        width: 96vw;
+        height: fit-content;
+        margin: 2vh 2vw;
+    }
+}

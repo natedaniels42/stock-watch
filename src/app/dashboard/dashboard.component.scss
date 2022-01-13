@@ -25,6 +25,10 @@
         #left-column, #right-column, #middle-column {
             width: 100vw;
         }
+        
+        #middle-column {
+            margin: 0;
+        }
     }
 
 }
