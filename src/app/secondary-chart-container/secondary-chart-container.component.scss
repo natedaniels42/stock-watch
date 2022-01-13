@@ -7,10 +7,6 @@
 
     #chart-outer {
         display: flex;
-
-        // #chart-inner {
-        //     display: flex;
-        // }
     }
     
     .arrow-container {
@@ -50,15 +46,19 @@
 }
 
 @media screen and (max-width: 1000px) {
-   #chart-outer {
-        #chart-inner {
-            display: none;
-        }   
+    #container {
+        width: 100vw;
 
-        #chart-inner:first-of-type {
-            display: contents;
-       }
-   } 
+        #chart-outer {
+            #chart-inner {
+                display: none;
+            }   
+    
+            #chart-inner:first-of-type {
+                display: contents;
+           }
+       } 
+    }
 }
 
 

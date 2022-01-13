@@ -15,6 +15,7 @@ export class SidebarComponent implements OnInit {
   end: number = 0;
   invalid: boolean = false;
   dark: boolean = false;
+  expand: boolean = false;
   activeSymbols = [true,true,false,false,false,false,false,false,false,false];
   activeIntervals = [false, false, false, false];
   
@@ -105,4 +106,7 @@ export class SidebarComponent implements OnInit {
     }
   }
 
+  handleExpand(event: Event) {
+    this.expand ? this.expand = false : this.expand = true;
+  }
 }

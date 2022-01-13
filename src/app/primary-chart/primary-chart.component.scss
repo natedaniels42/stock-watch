@@ -13,6 +13,7 @@
 @media screen and (max-width: 1000px) {
     #primary-container {
         width: 96vw;
+        min-height: 600px;
         height: fit-content;
         margin: 2vh 2vw;
     }
