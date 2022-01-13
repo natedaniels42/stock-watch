@@ -6,11 +6,15 @@
             class="arrow" 
             (click)="handleClick(-1)">
     </div>
-    <secondary-chart 
-        *ngFor="let stock of currentStocks; let i = index" 
-        [stock]="stock" 
-        [color]="colors[i]"
-        [dark]="dark"></secondary-chart>
+    <div id="chart-outer">
+        <div id="chart-inner" *ngFor="let stock of currentStocks; let i = index">
+            <secondary-chart 
+                class="secondary-chart"
+                [stock]="stock" 
+                [color]="colors[i]"
+                [dark]="dark"></secondary-chart>
+        </div>
+    </div>
     <div class="arrow-container" id="right">
         <img src="assets/images/arrow.png" class="arrow" (click)="handleClick(1)">
     </div>

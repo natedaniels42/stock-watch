@@ -45,16 +45,16 @@ export class DashboardComponent implements OnInit {
       end: Date.now(),
       interval: 1440});
 
-    setInterval(() => {
-      this.timer = (this.timer + 1) % 20;
-      if (this.timer === 0) {
-        this.index = (this.index + 1) % 10;
-      }
-      if (this.timer % 2 === 0) {
-        this.getCurrent();
-      }
+    // setInterval(() => {
+    //   this.timer = (this.timer + 1) % 20;
+    //   if (this.timer === 0) {
+    //     this.index = (this.index + 1) % 10;
+    //   }
+    //   if (this.timer % 2 === 0) {
+    //     this.getCurrent();
+    //   }
 
-    }, 1000);
+    // }, 1000);
   }
 
   setDarkMode(value: boolean) {

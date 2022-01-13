@@ -2,8 +2,16 @@
     position: relative;
     display: flex;
     width: 100%;
-    height: 36vh;
+    height: fit-content;
     margin: 1vh 0;
+
+    #chart-outer {
+        display: flex;
+
+        // #chart-inner {
+        //     display: flex;
+        // }
+    }
     
     .arrow-container {
         position: absolute;
@@ -41,6 +49,17 @@
     }
 }
 
+@media screen and (max-width: 1000px) {
+   #chart-outer {
+        #chart-inner {
+            display: none;
+        }   
+
+        #chart-inner:first-of-type {
+            display: contents;
+       }
+   } 
+}
 
 
 
