@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SocketService {
-  private url = 'https://stockwatch-socket.herokuapp.com';
+  private localUrl = 'http://localhost:4000';
+  private deployedUrl = 'https://stockwatch-socket.herokuapp.com';
   private socket: Socket;
 
   constructor() { 
-    this.socket = io(this.url);
+    this.socket = io(this.localUrl);
   }
 
   listen(eventName: string) {

@@ -1,4 +1,4 @@
-<div id="container">
+<div id="container" *ngIf="currentStocks.length > 0">
     <div [ngClass]="dark ? 'arrow-container dark': 'arrow-container'">
         <img 
             src="assets/images/arrow.png" 

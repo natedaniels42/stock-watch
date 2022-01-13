@@ -2,6 +2,50 @@
     background-color: #fff;
     border-radius: 10px;
     height: 100vh;
+    
+    #slider {
+        position: relative;
+        width: 50px;
+        height: 25px;
+        border-radius: 50px;
+        background-color: #000;
+        
+        #circle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 2px;
+            background-color: #fff;
+        }
+    }
+
+    #logo-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px 20px 0 20px;
+    }
+
+    .logo {
+        display: flex;
+        padding: 15px 5px;
+        z-index: 10;
+    
+        img {
+            width: 25px;
+            margin-right: 10px;
+        }
+        
+        p {
+            color: #ddd;
+        }
+        
+    }
+    
+    .logo.active p {
+        color: #000;
+    }
 }
 
 #sidebar-container.dark {
@@ -17,57 +61,19 @@
 
     input {
         color: #b0a4dc;
-        background-color: #2e1c3d;
+        background-color: #fff;
     }
 
     ::-webkit-calendar-picker-indicator {
-    //     filter: invert(100%) sepia() saturate(1000%) hue-rotate(28deg)
-    // brightness(170%) opacity(.3);
+        filter: invert(100%) sepia() saturate(1000%) hue-rotate(200deg)
+        brightness(70%) opacity(.7);
     }
 }
 
-p {
-    color: #ddd;
-}
 
-.active p {
-    color: #000;
-}
 
-#logo-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 20px 0 20px;
-}
 
-.logo {
-    display: flex;
-    padding: 15px 5px;
-    z-index: 10;
 
-    img {
-        width: 25px;
-        margin-right: 10px;
-    }
-}
-
-#slider {
-    position: relative;
-    width: 50px;
-    height: 25px;
-    border-radius: 50px;
-    background-color: #000;
-    
-    #circle {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        margin: 2px;
-        background-color: #fff;
-    }
-}
 
 #slider.dark {
     background-color: #fff;
