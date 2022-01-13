@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   stockList: {symbol: string, image: string}[] = [];
   currentStocks: any = [];
   historicalData: any = []; 
+  interval: number = 0;
   historicalSearch = {
       symbols: [],
       start: 0,
@@ -33,6 +34,7 @@ export class DashboardComponent implements OnInit {
 
     this.socketService.listen('historical').subscribe((data: any) => {
       this.historicalData = data.data.stocks;
+      this.interval = data.interval;
       console.log('Historical Data');
       console.log(this.historicalData);
     })

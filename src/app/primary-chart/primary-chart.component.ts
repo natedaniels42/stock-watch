@@ -8,9 +8,17 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 export class PrimaryChartComponent implements OnChanges {
   @Input() historicalData: any = []; 
   @Input() dark: boolean = false;
+  @Input() interval: number = 0;
+  title: string = '';
   graph: any = {
     data: [],
     layout: {
+      title: {
+        text: `Stock Data on ${this.title} Intervals`,
+        font: {
+          color: '#b0a4dc'
+        }
+      },
       plot_bgcolor: 'rgba(0,0,0,0)',
       paper_bgcolor: 'rgba(0,0,0,0)',
       candlestickmode: 'group',
@@ -58,6 +66,11 @@ export class PrimaryChartComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(): void {
+    this.title = this.interval === 5 
+      ? '5 minute' : this.interval === 15 
+      ? '15 minute' : this.interval === 60
+      ? '1 hour' : '1 day';
+    this.graph.layout.title.text = `Stock Data on ${this.title} Intervals`;
     this.graph.data = this.historicalData.map((data: any) => {
       const xAxis = data.data.map((time: any) => new Date(time.timestamp));
       const high = data.data.map((time: any) => time.high);
