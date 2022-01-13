@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SocketService {
-  private url = 'http://localhost:4000';
+  private url = 'https://stockwatch-socket.herokuapp.com';
   private socket: Socket;
 
   constructor() { 

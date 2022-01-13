@@ -18,12 +18,11 @@
     input {
         color: #b0a4dc;
         background-color: #2e1c3d;
-        color: -internal-light-dark(black, white);
     }
 
     ::-webkit-calendar-picker-indicator {
-        filter: invert(.5);
-        // filter: invert(100%) sepia() saturate(10000%) hue-rotate(120deg);
+    //     filter: invert(100%) sepia() saturate(1000%) hue-rotate(28deg)
+    // brightness(170%) opacity(.3);
     }
 }
 
