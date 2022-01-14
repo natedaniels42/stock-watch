@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Stock } from '../Interfaces';
 
 @Component({
   selector: 'secondary-chart-container',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./secondary-chart-container.component.scss']
 })
 export class SecondaryChartContainerComponent implements OnInit {
-  @Input() currentStocks: any = [];
+  @Input() currentStocks: Stock[] = [];
   @Input() dark: boolean = false;
   @Output() indexEvent = new EventEmitter();
   colors: string[] = ['red', 'green', 'yellow'];
@@ -16,7 +17,13 @@ export class SecondaryChartContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleClick(value: number) {
+  /**
+   * Takes in a number based on the button clicked and sends that back to the 
+   * dashboard component 
+   * @param value - a number
+   * @returns - void
+   */
+  handleClick(value: number): void {
     this.indexEvent.emit(value);
   }
 }
