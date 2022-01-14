@@ -110,6 +110,8 @@ export class DashboardComponent implements OnInit {
    * @return - void
    */
   getCurrent(): void {
+    // Pato: This function is difficult to read/understand, might help to make some variables =>
+    // let my_interval = (this.index + 1) % 10
     this.socketService.emit('live', {'request-type': 'live', 'data': [this.index, (this.index + 1) % 10, (this.index + 2) % 10]});
   }
 
