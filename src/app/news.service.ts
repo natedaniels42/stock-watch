@@ -8,6 +8,11 @@ export class NewsService {
   
   constructor(private http: HttpClient) { }
 
+  /**
+   * Uses a promise to call the news API and get results
+   * @param value - string
+   * @returns 
+   */
   public searchNews(value: string) {
     return new Promise((resolve, reject) => {
       this.http.get(`https://api.marketaux.com/v1/news/all?symbols=${value}&filter_entities=true&language=en&api_token=RHgijdhwvXFZSiNEw3YdE5XnwpvkOTh1hbT6ecjH`).subscribe(
