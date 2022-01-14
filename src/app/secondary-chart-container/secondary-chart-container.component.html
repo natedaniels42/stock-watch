@@ -4,7 +4,8 @@
             src="assets/images/arrow.png" 
             id="left" 
             class="arrow" 
-            (click)="handleClick(-1)">
+            (click)="handleClick(-1)"
+            alt="Left arrow">
     </div>
     <div id="chart-outer">
         <div id="chart-inner" *ngFor="let stock of currentStocks; let i = index">
@@ -16,6 +17,6 @@
         </div>
     </div>
     <div class="arrow-container" id="right">
-        <img src="assets/images/arrow.png" class="arrow" (click)="handleClick(1)">
+        <img src="assets/images/arrow.png" class="arrow" (click)="handleClick(1)" alt="Right arrow">
     </div>
 </div>
