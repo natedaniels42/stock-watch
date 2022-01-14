@@ -10,11 +10,11 @@ const path = require('path');
 const app = express();
 app.use(requireHTTPS);
 
-app.use(express.static('./dist/StockWatch'));
+app.use(express.static(__dirname + '/dist/StockWatch'));
 
-app.get('/', (req, res) => {
-    res.sendFile('index.html', {root: 'dist/stockWatch/'}
-  );
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/dist/stockWatch/index.html'))
 });
+
 
 app.listen(8080, console.log(`Server is running on port: 8080`));
