@@ -85,38 +85,15 @@
         }
     }
 
-    #interval-outer {
-        margin: 15px;
-        display: flex;
-        flex-direction: column;
-
-        .interval-label {
-            margin: 0 0 10px 0;
-        }
-        
-        #interval-inner {
-           display: flex;
-           flex-direction: row;
-           justify-content: space-around;
-           flex-wrap: wrap; 
-           
-           p {
-               padding: 2px;
-               border-radius: 2px;
-               background-color: #eee;
-               box-shadow: 1px 1px 5px #000;
-               margin: 2px;
-               cursor: pointer;
-           }
-   
-           p:hover {
-               opacity: .5;
-           }
-       
-           .active-interval {
-               background-color: lightblue;
-           }
-        }
+    #interval {
+        margin: 50px 15px;
+        max-width: 90%;
+        padding: 8px 0;
+        font-size: 16px;
+        color: #888;
+        background-color: #fff;
+        border: none;
+        border-bottom: 1px solid #000;
     }
 
     #submit {
@@ -206,23 +183,10 @@
           }
     }
 
-    .interval-label {
-        color: #fff;
-    }
-
-    #interval-outer {
-        #interval-inner {
-            p {
-                color: #b0a4dc;
-                background-color: #2e1c3d;
-                box-shadow: 1px 1px 5px #b0a4dc;
-            }
-    
-            .active-interval {
-                color: #2e1c3d;;
-                background-color: #b0a4dc;
-            }
-        }
+    #interval {
+        color: #b0a4dc;
+        background-color: #000;
+        border-bottom: 1px solid #b0a4dc;
     }
 
     #submit {
@@ -242,6 +206,7 @@
 
             #update {
                 display: flex;
+                cursor: pointer;
             }
         }
 
