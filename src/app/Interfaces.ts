@@ -5,13 +5,6 @@ export interface HistoricalSearch {
     interval: number
 }
 
-interface CandlestickData {
-    timestamp: number,
-    high: number,
-    low: number,
-    open: number,
-    close: number
-}
 
 export interface HistoricalData {
     name: string,
@@ -23,6 +16,26 @@ export interface HistoricalData {
 export interface StockInfo {
     symbol: string,
     image: string
+}
+
+interface StockData {
+    timestamp: number,
+    amount: number
+}
+
+export interface Stock {
+    name: string,
+    symbol: string,
+    image: string,
+    data: StockData[]
+}
+
+interface CandlestickData {
+    timestamp: number,
+    high: number,
+    low: number,
+    open: number,
+    close: number
 }
 
 interface PrimaryChartData {
@@ -106,4 +119,49 @@ export interface PrimaryChart {
     style: {
         width: string
     }      
+}
+
+interface SecondaryChartData {
+    x: string[],
+    y: number[],
+    mode: string,
+    line: {
+      color: string
+    }
+}
+
+export interface SecondaryChart {
+    data: SecondaryChartData[],
+      layout: {
+        title: {
+          text: string,
+          fontSize: string,
+          xanchor: string,
+          y: number,
+          yanchor: string
+        },
+        plot_bgcolor: string,
+        paper_bgcolor: string,
+        autosize: boolean,
+        titlefont: {
+          color: string,
+        },
+        xaxis: {
+          showgrid: boolean,
+          showticklabels: boolean,
+          zeroline: boolean
+        },
+        yaxis: {
+          showgrid: boolean,
+          showticklabels: boolean,
+          zeroline: boolean
+        }
+      },
+      config: {
+        responsive: boolean,
+        displayModeBar: boolean
+      },
+      style: {
+        height: string
+      }
 }

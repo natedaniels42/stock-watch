@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocketService } from '../socket.service';
 
-import { HistoricalSearch, StockInfo } from '../Interfaces';
+import { HistoricalData, HistoricalSearch, Stock, StockInfo } from '../Interfaces';
 
 @Component({
   selector: 'dashboard',
@@ -13,8 +13,8 @@ export class DashboardComponent implements OnInit {
   timer: number = 0;
   dark: boolean = false;
   stockList: StockInfo[] = [];
-  currentStocks: any = [];
-  historicalData: any = []; 
+  currentStocks: Stock[] = [];
+  historicalData: HistoricalData[] = []; 
   interval: number = 0;
   historicalSearch: HistoricalSearch = {
     symbols: [],
