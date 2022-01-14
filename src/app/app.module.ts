@@ -6,6 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,10 +19,7 @@ import { PrimaryChartComponent } from './primary-chart/primary-chart.component';
 import { SecondaryChartComponent } from './secondary-chart/secondary-chart.component';
 import { SecondaryChartContainerComponent } from './secondary-chart-container/secondary-chart-container.component';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
 import { DatePickerComponent } from './date-picker/date-picker.component';
-import { MatNativeDateModule } from '@angular/material/core';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -42,11 +42,11 @@ PlotlyModule.plotlyjs = PlotlyJS;
     BrowserAnimationsModule,
     MatDatepickerModule,
     MatInputModule,
-    NgxMatTimepickerModule,
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
     NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
     NgxMatNativeDateModule,
     MatNativeDateModule
   ],

@@ -12,28 +12,28 @@
     <div id="settings-container" [ngClass]="expand ? 'expand' : ''">
         <div id="logo-container">
             <div *ngFor="let stock of stockList; let i = index" id={{stock.symbol}} [ngClass]="activeSymbols[i] === true ? 'logo active' : 'logo'" (click)="handleClick($event)">
-                <img src={{stock.image}} id={{stock.symbol}}>
+                <img src={{stock.image}} id={{stock.symbol}} alt={{stock.symbol}}>
                 <p class="bold" id={{stock.symbol}}>{{stock.symbol}}</p>
             </div>
         </div>
         <div id="date-container">
-            <p *ngIf="invalid" class="error">Start time must be before end time</p>
-            <label for="start">Starting Time:</label>
-            <input 
-                type="datetime-local" 
-                name="start" 
-                id="start"
-                #startInput 
-                (focus)="invalid = false" 
-                (change)="handleChange($event)">
-            <label for="end">Ending Time:</label>
-            <input 
-                type="datetime-local" 
-                name="end" 
-                id="end"
-                #endInput
-                (focus)="invalid = false" 
-                (change)="handleChange($event)">
+            <!-- Custom datetime picker from Angular Material-->
+            <mat-form-field>
+                <input #startInput matInput [ngxMatDatetimePicker]="pickerFrom" placeholder="From date & time" [(ngModel)]="start">
+                
+                <mat-datepicker-toggle matSuffix [for]="$any(pickerFrom)"></mat-datepicker-toggle>
+                
+                <ngx-mat-datetime-picker #pickerFrom [enableMeridian]="true"></ngx-mat-datetime-picker>
+            </mat-form-field>
+            
+            <mat-form-field>
+                <input #endInput matInput [ngxMatDatetimePicker]="pickerTo" placeholder="To date & time" [(ngModel)]="end"
+                [min]="start">
+                
+                <mat-datepicker-toggle matSuffix [for]="$any(pickerTo)"></mat-datepicker-toggle>
+                
+                <ngx-mat-datetime-picker #pickerTo [enableMeridian]="true"></ngx-mat-datetime-picker>
+            </mat-form-field>
         </div>
         <div id="interval-outer">
             <p class="interval-label">Interval: </p>

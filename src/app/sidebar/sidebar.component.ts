@@ -12,9 +12,8 @@ export class SidebarComponent implements OnInit {
   @Output() darkModeToggle = new EventEmitter();
   symbols: string[] = ['F', 'T'];
   interval: number = 0;
-  start: number = 0;
-  end: number = 0;
-  invalid: boolean = false;
+  start: string = '';
+  end: string = '';
   dark: boolean = false;
   expand: boolean = false;
   activeSymbols: boolean[] = [true,true,false,false,false,false,false,false,false,false];
@@ -58,29 +57,6 @@ export class SidebarComponent implements OnInit {
   }
 
   /**
-   * When the input changes, the value is converted into a timestamp
-   * If the start input is changed the start property is set to the value
-   * If the end input is changed the end property is set to the value
-   * If the start value is greater than the end value the invalid property is set to true
-   * @param event - Event
-   * @returns - void
-   */
-  handleChange(event: Event): void {
-    const target = (event.target as HTMLInputElement);
-    const timestamp = Date.parse(target.value);
-    if (target.id === 'start') {
-      this.start = timestamp;
-    } else {
-      this.end = timestamp;
-    }
-
-    if (this.start > this.end && this.end !== 0) {
-      this.invalid = true;
-    }
-    console.log([this.start, this.end]);
-  }
-
-  /**
    * On click the id of the clicked event is checked against the value of the interval 
    * property
    * If they are the same, interval is set to zero.  If not, interval is set to the id
@@ -117,8 +93,9 @@ export class SidebarComponent implements OnInit {
   /**
    * On submit the symbols, start, end, and interval are all checked to see if they are
    * valid
-   * If so, they are sent to the dashboard component to call the socketService to get
-   * historical data
+   * If so, the start and end property are converted into timestamps  
+   * The symbols and interval properties as wellas the timestamps are sent to the 
+   * dashboard component to call the socketService to get historical data
    * @param event - Event
    * @returns - void
    */
@@ -126,18 +103,19 @@ export class SidebarComponent implements OnInit {
     event.preventDefault();
 
     if (this.symbols.length > 0 
-      && this.start < this.end 
       && this.start
       && this.end
       && this.interval) {
+        const startTimestamp = Date.parse(this.start);
+        const endTimestamp = Date.parse(this.end);
         this.historicalSearch.emit({
           symbols: this.symbols,
-          start: this.start,
-          end: this.end,
+          start: startTimestamp,
+          end: endTimestamp,
           interval: this.interval
         });
-        this.start = 0;
-        this.end = 0;
+        this.start = '';
+        this.end = '';
         this.interval = 0;
         this.activeIntervals = [false, false, false, false];    
       } else {

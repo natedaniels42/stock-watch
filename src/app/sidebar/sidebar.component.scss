@@ -53,7 +53,7 @@
             }
             
             p {
-                color: #ddd;
+                color: #bbb;
             }
         }
         
@@ -65,17 +65,14 @@
     #date-container {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         padding: 15px;
-        height: 150px;
+        height: 120px;
         
         input {
             max-width: 90%;
-            background-color: #eee;
+            background-color: #fff;
             padding: 2px;
-            border-radius: 2px;
             border: none;
-            box-shadow: 1px 1px 5px #000;
             cursor: pointer;
         }
 
@@ -257,7 +254,7 @@
                         margin: 0;
                     }
                     p {
-                        font-size: .7rem;
+                        font-size: .8rem;
                     }
                 }
             }
@@ -271,11 +268,12 @@
 
         #date-container {
             flex-direction: row;
-            height: 40px;
+            height: 80px;
 
             input {
                 height: 20px;
                 width: 25%;
+                background-color: #eee;
             }
         }
 
