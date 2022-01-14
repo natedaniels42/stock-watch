@@ -175,20 +175,35 @@
     }
 
     #date-container {
-        label {
-            color: white;
-        }
-
         input {
             color: #b0a4dc;
-            background-color: #2e1c3d;
-            box-shadow: 1px 1px 5px #b0a4dc;
+            background-color: #000;
         }
 
-        ::-webkit-calendar-picker-indicator {
-            filter: invert(100%) sepia() saturate(1000%) hue-rotate(200deg)
-            brightness(70%) opacity(.7);
+        // Styling of the custom date time picker from Angular Material
+        ::ng-deep .mat-focused .mat-form-field-label {
+            /*change color of label*/
+            color: #b0a4dc !important;
         }
+          
+        ::ng-deep.mat-form-field-underline {
+            /*change color of underline*/
+            background-color: #b0a4dc !important;
+        } 
+          
+        ::ng-deep.mat-form-field-ripple {
+           /*change color of underline when focused*/
+           background-color: #b0a4dc !important;;
+        }
+          
+        ::ng-deep .mat-form-field-label {
+            /*change color of label*/
+            color: #b0a4dc !important;
+        }
+
+        mat-datepicker-toggle {
+            color: #b0a4dc !important;
+          }
     }
 
     .interval-label {

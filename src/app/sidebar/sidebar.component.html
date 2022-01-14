@@ -19,7 +19,13 @@
         <div id="date-container">
             <!-- Custom datetime picker from Angular Material-->
             <mat-form-field>
-                <input #startInput matInput [ngxMatDatetimePicker]="pickerFrom" placeholder="From date & time" [(ngModel)]="start">
+                <input 
+                    id="start"
+                    #startInput 
+                    matInput 
+                    [ngxMatDatetimePicker]="pickerFrom" 
+                    placeholder="From date & time" 
+                    [(ngModel)]="start">
                 
                 <mat-datepicker-toggle matSuffix [for]="$any(pickerFrom)"></mat-datepicker-toggle>
                 
@@ -27,8 +33,14 @@
             </mat-form-field>
             
             <mat-form-field>
-                <input #endInput matInput [ngxMatDatetimePicker]="pickerTo" placeholder="To date & time" [(ngModel)]="end"
-                [min]="start">
+                <input 
+                    id="end"
+                    #endInput 
+                    matInput 
+                    [ngxMatDatetimePicker]="pickerTo" 
+                    placeholder="To date & time" 
+                    [(ngModel)]="end"
+                    [min]="start">
                 
                 <mat-datepicker-toggle matSuffix [for]="$any(pickerTo)"></mat-datepicker-toggle>
                 
