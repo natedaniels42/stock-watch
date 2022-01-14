@@ -19,11 +19,13 @@
         margin: 10px 0;
         align-self: center;
         max-width: 90%;
-        padding: 2px;
-        border-radius: 2px;
-        background-color: #eee;
+        padding: 8px;
+        font-size: 16px;
+        color: #888;
+        background-color: #fff;
         border: none;
-        box-shadow: 1px 1px 5px #000;
+        border-bottom: 1px solid #000;
+        
     
         option {
             background-color: blue;
@@ -53,10 +55,11 @@
     h2 {
         color: #b0a4dc;
     }
-
+    
     select {
         color: #b0a4dc;
-        background-color: #2e1c3d;
+        background-color: #000;
+        border-bottom: 1px solid #b0a4dc;
     }
 
     .story {

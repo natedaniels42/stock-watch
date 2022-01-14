@@ -1,9 +1,11 @@
 <div id="news-container" [ngClass]="dark ? 'dark' : ''">
     <h2>News</h2>
-    <select name="symbol" #select (change)="handleChange($event)">
-        <option value="">Choose a Stock:</option>
-        <option *ngFor="let stock of stockList" value={{stock.symbol}}>{{stock.symbol}}</option>
-    </select>
+    <div class="select">
+        <select name="symbol" #select (change)="handleChange($event)">
+            <option value="">Choose a Stock:</option>
+            <option *ngFor="let stock of stockList" value={{stock.symbol}}>{{stock.symbol}}</option>
+        </select>
+    </div>
     <h3 *ngIf="newsResults.length > 0">{{newsResults[0].entities[0].name | uppercase}} NEWS</h3>
     <div class="story" *ngFor="let result of newsResults">
         <a href={{result.url}} target="_blank" class="story">
