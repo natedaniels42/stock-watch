@@ -14,7 +14,7 @@ export class SocketService {
    * Sets the socket to the specific url holding the socket server
    */
   constructor() { 
-    this.socket = io(this.localUrl);
+    this.socket = io(this.deployedUrl);
   }
 
   /**
