@@ -5,7 +5,13 @@ export interface HistoricalSearch {
     interval: number
 }
 
-
+interface CandlestickData {
+    timestamp: number,
+    high: number,
+    low: number,
+    open: number,
+    close: number
+}
 export interface HistoricalData {
     name: string,
     symbol: string,
@@ -30,13 +36,6 @@ export interface Stock {
     data: StockData[]
 }
 
-interface CandlestickData {
-    timestamp: number,
-    high: number,
-    low: number,
-    open: number,
-    close: number
-}
 
 interface PrimaryChartData {
     name: string,
