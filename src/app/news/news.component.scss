@@ -71,10 +71,11 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
     #news-container {
         width: 100vw;
         height: fit-content;
         min-height: 500px;
+        overflow: hidden;
     }
 }

@@ -54,15 +54,6 @@
             <option value="60">1 Hour</option>
             <option value="1440">1 Day</option>
         </select><br>
-        <!-- <div id="interval-outer">
-            <p class="interval-label">Interval: </p>
-            <div id="interval-inner">
-                <p (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[0] ? 'active-interval' : ''" id="5">5 min</p>
-                <p (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[1] ? 'active-interval' : ''" id="15">15 min</p>
-                <p (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[2] ? 'active-interval' : ''" id="60">1 hr</p>
-                <p (click)="handleIntervalClick($event)" [ngClass]="activeIntervals[3] ? 'active-interval' : ''" id="1440">1 day</p>
-            </div>
-        </div> -->
         <button 
             type="submit" 
             [ngClass]="symbols.length > 0 && interval && start && end ? '' : 'disabled'"

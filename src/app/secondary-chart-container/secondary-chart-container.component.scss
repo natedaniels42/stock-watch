@@ -45,9 +45,17 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
     #container {
         width: 100vw;
+
+        #left-container {
+            left: 20px;
+        }
+
+        #right {
+            right: 20px;
+        }
 
         #chart-outer {
             #chart-inner {

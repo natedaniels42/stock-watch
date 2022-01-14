@@ -92,7 +92,6 @@ export interface PrimaryChart {
             showgrid: boolean,
             autorange: boolean,
             zeroline: boolean,
-            title: string,
             color: string,
             rangeslider: {
                 visible: boolean,

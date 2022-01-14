@@ -40,7 +40,6 @@ export class PrimaryChartComponent implements OnChanges {
         showgrid: false,
         autorange: true,
         zeroline: false,
-        title: 'Date',
         color: '#b0a4dc',
         rangeslider: {
           visible: false,

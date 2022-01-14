@@ -3,6 +3,7 @@
     width: 100vw;
     height: fit-content;
     background-color: #eee;
+    max-width: 100%;
     
     #left-column, #right-column {
         width: 14vw;
@@ -18,7 +19,7 @@
     background-color: #1b1726;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
     #dashboard-container {
         flex-direction: column;
     

@@ -19,7 +19,6 @@ import { PrimaryChartComponent } from './primary-chart/primary-chart.component';
 import { SecondaryChartComponent } from './secondary-chart/secondary-chart.component';
 import { SecondaryChartContainerComponent } from './secondary-chart-container/secondary-chart-container.component';
 import { MatInputModule } from '@angular/material/input';
-import { DatePickerComponent } from './date-picker/date-picker.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -31,8 +30,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     NewsComponent,
     PrimaryChartComponent,
     SecondaryChartComponent,
-    SecondaryChartContainerComponent,
-    DatePickerComponent
+    SecondaryChartContainerComponent
   ],
   imports: [
     BrowserModule,

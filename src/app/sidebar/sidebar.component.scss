@@ -28,7 +28,10 @@
         #update {
             display: none;
             margin-right: 20px;
+            padding: 10px;
+            box-shadow: 1px 1px 5px #000, inset -1px -1px 5px #333;
         }
+
     }
 
     #logo-container {
@@ -131,13 +134,12 @@
         }
 
         #update {
+            background-color: #2e1c3d;
+            box-shadow: 1px 1px 5px #b0a4dc, inset 1px 1px 5px #ccc;
+
             p {
-                color: #fff;
+                color: #b0a4dc;
             }
-        }
-
-        #update:hover {
-
         }
     }
 
@@ -195,7 +197,7 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
     #sidebar-container {
         width: 100vw;
         height: 100%;
@@ -207,12 +209,17 @@
             #update {
                 display: flex;
                 cursor: pointer;
+                z-index: 10;
+
+                p {
+                    cursor: pointer;
+                }
             }
         }
 
         #settings-container {
             position: relative;
-            top: -400px;
+            top: -500px;
             height: 0;
             opacity: 0;
             transition: 1s top, 1s opacity, 1s height; 
@@ -257,17 +264,8 @@
             }
         }
 
-        #interval-outer {
-            flex-direction: row;
-        
-            #interval-inner {
-                flex-direction: row;
-                margin: 0 0 0 10px;
-
-                p {
-                    margin: 010px;
-                }
-            }
+        #interval {
+            background-color: #eee;
         }
         
         #submit {
