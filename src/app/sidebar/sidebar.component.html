@@ -21,7 +21,6 @@
             <mat-form-field>
                 <input 
                     id="start"
-                    #startInput 
                     matInput 
                     [ngxMatDatetimePicker]="pickerFrom" 
                     placeholder="From date & time" 
@@ -57,7 +56,7 @@
         <button 
             type="submit" 
             [ngClass]="symbols.length > 0 && interval && start && end ? '' : 'disabled'"
-            (click)="handleSubmit($event); startInput.value = ''; endInput.value = ''"
+            (click)="handleSubmit($event); endInput.value = ''"
             id="submit">Get Data</button>
     </div>
 </section>

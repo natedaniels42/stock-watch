@@ -86,10 +86,7 @@ export class PrimaryChartComponent implements OnChanges {
       const low = data.data.map((time: any) => time.low);
       const open = data.data.map((time: any) => time.open);
       const close = data.data.map((time: any) => time.close);
-      // 3 random numbers are generated to set the color for the graph
-      const random1 = Math.floor(Math.random() * 255);
-      const random2 = Math.floor(Math.random() * 255);
-      const random3 = Math.floor(Math.random() * 255);
+      console.log(data);
       return {
         name: data.symbol,
         x: xAxis,
@@ -97,12 +94,17 @@ export class PrimaryChartComponent implements OnChanges {
         low: low,
         open: open,
         close: close,
-        increasing: {line: {color: `rgba(${random1}, ${random2}, ${random3}, 1)`}},
+        increasing: {
+          line: {
+            color: `rgba(${data.color}, 1)`
+          },
+          fillcolor: `rgba(${data.color}, 1)`
+        },
         decreasing: {
           line: {
-          color: `rgba(${random1}, ${random2}, ${random3}, 1)`,
+          color: `rgba(${data.color}, 1)`
           },
-          fillcolor: `rgba(${random1}, ${random2}, ${random3}, .1)`
+          fillcolor: `rgba(${data.color}, .1)`
         },
         line: {color: 'blue'},
         type: 'candlestick',
@@ -112,3 +114,4 @@ export class PrimaryChartComponent implements OnChanges {
     })
   }
 }
+

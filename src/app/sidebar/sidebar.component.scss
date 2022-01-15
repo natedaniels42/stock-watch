@@ -71,20 +71,17 @@
         padding: 15px;
         height: 120px;
         
-        input {
-            max-width: 90%;
+        #start, #end {
+            width: 100%;
             background-color: #fff;
             padding: 2px;
             border: none;
             cursor: pointer;
+            color: #888;
         }
 
         input:hover {
             opacity: .5;
-        }
-        
-        .error {
-            color: red;
         }
     }
 
@@ -154,7 +151,7 @@
     }
 
     #date-container {
-        input {
+        #start, #end {
             color: #b0a4dc;
             background-color: #000;
         }
@@ -257,9 +254,9 @@
             flex-direction: row;
             height: 80px;
 
-            input {
+            #start, #end {
                 height: 20px;
-                width: 25%;
+                width: 100%;
                 background-color: #eee;
             }
         }
