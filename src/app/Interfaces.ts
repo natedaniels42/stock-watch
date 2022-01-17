@@ -16,6 +16,7 @@ export interface HistoricalData {
     name: string,
     symbol: string,
     image: string,
+    color: string,
     data: CandlestickData[]
 }
 
@@ -33,6 +34,7 @@ export interface Stock {
     name: string,
     symbol: string,
     image: string,
+    color: string,
     data: StockData[]
 }
 
@@ -48,15 +50,17 @@ interface PrimaryChartData {
             line: {
                 color: string
             }
+            fillcolor: string
         },
         decreasing: {
-          line: {
-            color: string,
+            line: {
+                color: string,
             },
-          fillcolor: string
+            fillcolor: string
         },
         line: {
-            color: string},
+            color: string
+        },
         type: 'candlestick',
         xaxis: string,
         yaxis: string
