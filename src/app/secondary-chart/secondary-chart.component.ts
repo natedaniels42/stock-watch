@@ -11,7 +11,6 @@ export class SecondaryChartComponent implements OnInit {
     name: '',
     symbol: '',
     image: '',
-    color: '',
     data: []
   };
   @Input() color: string = '';
@@ -59,7 +58,6 @@ export class SecondaryChartComponent implements OnInit {
    * @returns - void
    */
   ngOnInit(): void {
-    console.log(this.stock);
     const currentData = this.stock.data;
     // Converts timestamps into readable date information
     const xAxis = currentData.map((point: any) => new Date(point.timestamp).toString());
@@ -71,7 +69,7 @@ export class SecondaryChartComponent implements OnInit {
       y: yAxis,
       mode: 'lines',
       line: {
-        color: `rgba(${this.stock.color}, 1)`
+        color: this.color
       }
     }]
     this.secondaryChart.layout.title.text = `${this.stock.name} $${currentPrice}`.toUpperCase(); 
