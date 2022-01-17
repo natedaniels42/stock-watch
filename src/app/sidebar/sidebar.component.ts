@@ -17,7 +17,8 @@ export class SidebarComponent implements OnInit {
   dark: boolean = false;
   expand: boolean = false;
   activeSymbols: boolean[] = [true,true,false,false,false,false,false,false,false,false];
-  
+  hamburgerIcon: string = 'assets/images/hamburger-icon.png';
+  xIcon: string = 'assets/images/x-icon.png';
   constructor() { }
 
   ngOnInit(): void {
@@ -29,7 +30,15 @@ export class SidebarComponent implements OnInit {
    * @returns - void
    */
   toggleMode(): void {
-    this.dark ? this.dark = false : this.dark = true;
+    if (this.dark) {
+      this.dark = false;
+      this.hamburgerIcon = 'assets/images/hamburger-icon.png';  
+      this.xIcon = 'assets/images/x-icon.png';
+    } else {
+      this.dark = true;
+      this.hamburgerIcon = 'assets/images/hamburger-icon-white.png';
+      this.xIcon = 'assets/images/x-icon-white.ico';
+    }
     this.darkModeToggle.emit(this.dark);
   }
 

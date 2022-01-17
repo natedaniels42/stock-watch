@@ -20,6 +20,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
 
         .arrow {
             z-index: 10;
@@ -31,6 +32,11 @@
             transform: rotate(.5turn);
         }
 
+    }
+
+    .arrow-container:hover {
+        opacity: .5;
+        box-shadow: 1px 1px 5px #000;
     }
     
     #right {

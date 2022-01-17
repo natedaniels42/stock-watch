@@ -28,8 +28,11 @@
         #update {
             display: none;
             margin-right: 20px;
-            padding: 10px;
-            box-shadow: 1px 1px 5px #000, inset -1px -1px 5px #333;
+
+            #x-mark {
+                font-weight: bolder;
+                font-size: 20px;
+            }
         }
 
     }
@@ -134,11 +137,14 @@
         }
 
         #update {
-            background-color: #2e1c3d;
-            box-shadow: 1px 1px 5px #b0a4dc, inset 1px 1px 5px #ccc;
 
-            p {
-                color: #b0a4dc;
+            #hamburger {
+                height: 16px;
+                align-self: center;
+            }
+
+            #x-mark {
+                color: #fff;
             }
         }
     }

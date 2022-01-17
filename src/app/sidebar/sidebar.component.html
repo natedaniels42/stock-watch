@@ -6,8 +6,21 @@
             </div>
         </div>
         <div id="update" (click)="handleExpand()">
-            <p>{{expand ? 'Close' : 'Update Chart'}}</p>
+            <img 
+                src={{hamburgerIcon}} 
+                width="20px" 
+                id="hamburger" 
+                alt="Hamburger Menu Icon"
+                *ngIf="!expand">
+            <!-- <img
+                src={{xIcon}}
+                width="20px"
+                id="x-mark"
+                alt="Close Button Icon"
+                *ngIf="expand"> -->
+            <p *ngIf="expand" id="x-mark">X</p>
         </div>
+
     </div>
     <div id="settings-container" [ngClass]="expand ? 'expand' : ''">
         <div id="logo-container">
