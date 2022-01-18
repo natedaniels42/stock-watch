@@ -22,7 +22,7 @@ export class NewsComponent implements OnInit {
     setTimeout(() => {
       const random = Math.floor(Math.random() * 10);
       this.getNews(this.stockList[random].symbol);
-    }, 100)
+    }, 1000)
   }
 
   /**
