@@ -16,7 +16,7 @@
     }
 
     select {
-        margin: 10px 0;
+        margin: 10px 0 0 10px;
         align-self: center;
         max-width: 90%;
         padding: 8px;
@@ -34,6 +34,10 @@
 
     select:focus {
         opacity: .5;
+    }
+
+    h3 {
+        margin: 10px 0 0 10px;
     }
 
     .story {

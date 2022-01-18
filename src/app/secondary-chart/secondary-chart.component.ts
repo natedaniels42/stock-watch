@@ -59,7 +59,6 @@ export class SecondaryChartComponent implements OnInit {
    * @returns - void
    */
   ngOnInit(): void {
-    console.log(this.stock);
     const currentData = this.stock.data;
     // Converts timestamps into readable date information
     const xAxis = currentData.map((point: any) => new Date(point.timestamp).toString());
