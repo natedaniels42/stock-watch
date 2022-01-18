@@ -53,7 +53,7 @@ export class SidebarComponent implements OnInit {
   handleClick(event: Event): void {
     const target = (event.target as HTMLElement);
     const index = this.stockList.map(stock => stock.symbol).indexOf(target.id);
-    console.log(index);
+    
     if (this.symbols.includes(target.id)) {
       this.symbols = this.symbols.filter(symbol => symbol !== target.id);
       this.activeSymbols[index] = false;
@@ -61,7 +61,6 @@ export class SidebarComponent implements OnInit {
       this.symbols.push(target.id);
       this.activeSymbols[index] = true;
     }
-    console.log(this.symbols);
   }
 
   /**

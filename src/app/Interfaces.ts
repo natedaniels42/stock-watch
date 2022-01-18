@@ -58,9 +58,6 @@ interface PrimaryChartData {
             },
             fillcolor: string
         },
-        line: {
-            color: string
-        },
         type: 'candlestick',
         xaxis: string,
         yaxis: string

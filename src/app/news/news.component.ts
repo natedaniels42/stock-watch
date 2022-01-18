@@ -21,7 +21,7 @@ export class NewsComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       const random = Math.floor(Math.random() * 10);
-      // this.getNews(this.stockList[random].symbol);
+      this.getNews(this.stockList[random].symbol);
     }, 100)
   }
 
@@ -35,7 +35,6 @@ export class NewsComponent implements OnInit {
     this.newsService.searchNews(value)
       .then((response: any) => {
         this.newsResults = response.data;
-        console.log(this.newsResults);
       })
   }
 
@@ -46,7 +45,6 @@ export class NewsComponent implements OnInit {
    * @returns - void
    */
   handleChange(event: Event): void {
-    console.log((event.target as HTMLSelectElement).value);
     this.getNews((event.target as HTMLSelectElement).value);
   }
 

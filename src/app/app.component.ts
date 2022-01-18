@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NewsService } from './news.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { NewsService } from './news.service';
 export class AppComponent {
   title = 'StockWatch';
 
-  constructor(public newsService: NewsService) {  }
+  constructor() {  }
 
   ngOnInit() {
   

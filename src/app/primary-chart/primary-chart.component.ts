@@ -86,7 +86,7 @@ export class PrimaryChartComponent implements OnChanges {
       const low = data.data.map((time: any) => time.low);
       const open = data.data.map((time: any) => time.open);
       const close = data.data.map((time: any) => time.close);
-      console.log(data);
+    
       return {
         name: data.symbol,
         x: xAxis,
@@ -106,7 +106,6 @@ export class PrimaryChartComponent implements OnChanges {
           },
           fillcolor: `rgba(${data.color}, .1)`
         },
-        line: {color: 'blue'},
         type: 'candlestick',
         xaxis: 'x',
         yaxis: 'y'

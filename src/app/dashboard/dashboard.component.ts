@@ -40,14 +40,11 @@ export class DashboardComponent implements OnInit {
     
     this.socketService.listen('live').subscribe((data: any) => {
       this.currentStocks = data.data;
-      console.log(this.currentStocks);
     })
 
     this.socketService.listen('historical').subscribe((data: any) => {
       this.historicalData = data.data.stocks;
       this.interval = data.interval;
-      console.log('Historical Data');
-      console.log(this.historicalData);
     })
 
     this.getCurrent();
@@ -83,7 +80,6 @@ export class DashboardComponent implements OnInit {
    */
   setDarkMode(value: boolean): void {
     this.dark = value;
-    console.log(this.dark);
   }
 
   /**
